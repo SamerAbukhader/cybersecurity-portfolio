@@ -1,0 +1,33 @@
+VirtualBox lab configuration
+Captured 22 November 2026 with VBoxManage (VirtualBox 7.2.22 r175245)
+MAC addresses removed.
+
+Host-only network
+-----------------
+Adapter:      VirtualBox Host-Only Ethernet Adapter
+Host IP:      192.168.56.1
+Netmask:      255.255.255.0  (192.168.56.0/24)
+DHCP:         Disabled
+
+Attacker VM: kali-linux-2026.2-virtualbox-amd64
+-----------------------------------------------
+OS type:      Debian (64-bit)
+Memory:       2048 MB
+CPUs:         2
+Adapter 1:    hostonly -> VirtualBox Host-Only Ethernet Adapter (cable connected)
+Adapters 2-8: none   (no NAT, no bridged adapter)
+
+Target VM: Metasploitable 2
+---------------------------
+OS type:      Ubuntu (64-bit)
+Memory:       2048 MB
+CPUs:         1
+Adapter 1:    hostonly -> VirtualBox Host-Only Ethernet Adapter (cable connected)
+Adapters 2-8: none   (no NAT, no bridged adapter)
+
+Isolation summary
+-----------------
+Each VM has exactly one adapter, attached to the host-only network. Neither VM
+has a NAT or bridged adapter, so neither has a route to the home LAN or the
+internet. The only other host on 192.168.56.0/24 is the Windows host itself
+(192.168.56.1).
